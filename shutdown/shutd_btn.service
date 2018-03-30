@@ -1,0 +1,12 @@
+[Unit]
+Description=RPi-CM3MB2/MB3 Shutdown button service
+Wants=network.target
+
+[Service]
+ExecStart=/home/pi/ratoc/shutd_btn.py
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
+
