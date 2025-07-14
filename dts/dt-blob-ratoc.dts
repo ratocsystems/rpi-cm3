@@ -13,8 +13,11 @@
             }; // pin
             pin@p0  { function = "input";  termination = "pull_up";    }; // CAMERA 0 I2C0 SDA
             pin@p1  { function = "input";  termination = "pull_up";    }; // CAMERA 0 I2C0 SCL
-            pin@p41  { function = "output";  termination = "no_pulling"; }; // CAMERA 0 LED
-            pin@p32  { function = "output";  termination = "no_pulling"; }; // CAMERA 0 SHUTDOWN
+// 2025/7/14
+//            pin@p41  { function = "output";  termination = "no_pulling"; }; // CAMERA 0 LED
+//            pin@p32  { function = "output";  termination = "no_pulling"; }; // CAMERA 0 SHUTDOWN
+            pin@p32  { function = "output";  termination = "no_pulling"; }; // CAMERA 0 LED
+            pin@p41  { function = "output";  termination = "no_pulling"; }; // CAMERA 0 SHUTDOWN
             pin@p14 { function = "uart0";  termination = "no_pulling"; drive_strength_mA = < 8 >; }; // TX uart0
             pin@p15 { function = "uart0";  termination = "pull_up"; drive_strength_mA = < 8 >; }; // RX uart0
             pin@p46 { function = "input";   termination = "pull_up";    }; // SMPS_SCL
@@ -103,13 +106,22 @@
                type = "internal";
                number = <1>;
             };
-            pin_define@CAMERA_0_LED {         // CAM_GPIO0 = GPIO41
-               type = "internal";
-               number = <41>;
-            };
-            pin_define@CAMERA_0_SHUTDOWN {    // CAM_GPIO1 = GPIO32
+// 2025/7/14
+//          pin_define@CAMERA_0_LED {         // CAM_GPIO0 = GPIO41
+//              type = "internal";
+//              number = <41>;
+//            };
+//          pin_define@CAMERA_0_SHUTDOWN {    // CAM_GPIO1 = GPIO32
+//             type = "internal";
+//              number = <32>;
+//          };
+            pin_define@CAMERA_0_LED {         // CAM_GPIO0 = GPIO32
                type = "internal";
                number = <32>;
+            };
+            pin_define@CAMERA_0_SHUTDOWN {    // CAM_GPIO1 = GPIO41
+               type = "internal";
+               number = <41>;
             };
             pin_define@CAMERA_0_UNICAM_PORT { // UNICAM_PORT = 1
                type = "internal";
